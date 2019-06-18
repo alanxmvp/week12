@@ -1,0 +1,36 @@
+ALTER TABLE answer ALTER COLUMN question_id INT NOT NULL;
+
+SET IDENTITY_INSERT "question" ON
+INSERT INTO "question" (id, description) VALUES (1,'What is your favorite movie?');
+INSERT INTO "question" (id, description) VALUES (2,'What is your favorite programming language?');
+INSERT INTO "question" (id, description) VALUES (3,'What is your favorite food?');
+INSERT INTO "question" (id, description) VALUES (4,'What is your favorite vehicle brand?');
+INSERT INTO "question" (id, description) VALUES (5,'Which department you work in your company?');
+SET IDENTITY_INSERT "question" OFF
+SET IDENTITY_INSERT "answer" ON
+INSERT INTO "answer" (id, description, question_id) VALUES (1,'John Wick', 1);
+INSERT INTO "answer" (id, description, question_id) VALUES (2,'X-MEN', 1);
+INSERT INTO "answer" (id, description, question_id) VALUES (3,'Men In Black', 1);
+INSERT INTO "answer" (id, description, question_id) VALUES (4,'Godzilla', 1);
+INSERT INTO "answer" (id, description, question_id) VALUES (5,'Aladdin', 1);
+INSERT INTO "answer" (id, description, question_id) VALUES (6,'C#', 2);
+INSERT INTO "answer" (id, description, question_id) VALUES (7,'Visual Basic', 2);
+INSERT INTO "answer" (id, description, question_id) VALUES (8,'Java', 2);
+INSERT INTO "answer" (id, description, question_id) VALUES (9,'PHP', 2);
+INSERT INTO "answer" (id, description, question_id) VALUES (10,'Angular', 2);
+INSERT INTO "answer" (id, description, question_id) VALUES (11,'Fried Rice', 3);
+INSERT INTO "answer" (id, description, question_id) VALUES (12,'Tom Yam Noodle', 3);
+INSERT INTO "answer" (id, description, question_id) VALUES (13,'Claypot Rice', 3);
+INSERT INTO "answer" (id, description, question_id) VALUES (14,'Korean BBQ', 3);
+INSERT INTO "answer" (id, description, question_id) VALUES (15,'Sushi', 3);
+INSERT INTO "answer" (id, description, question_id) VALUES (16,'BMW', 4);
+INSERT INTO "answer" (id, description, question_id) VALUES (17,'Mercedes', 4);
+INSERT INTO "answer" (id, description, question_id) VALUES (18,'Audi', 4);
+INSERT INTO "answer" (id, description, question_id) VALUES (19,'Honda', 4);
+INSERT INTO "answer" (id, description, question_id) VALUES (20,'Toyota', 4);
+INSERT INTO "answer" (id, description, question_id) VALUES (21,'IT', 5);
+INSERT INTO "answer" (id, description, question_id) VALUES (22,'Accounting', 5);
+INSERT INTO "answer" (id, description, question_id) VALUES (23,'Sales', 5);
+INSERT INTO "answer" (id, description, question_id) VALUES (24,'Technical Support', 5);
+INSERT INTO "answer" (id, description, question_id) VALUES (25,'Project Management', 5);
+SET IDENTITY_INSERT "answer" OFF

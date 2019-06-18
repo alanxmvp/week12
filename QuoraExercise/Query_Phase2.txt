@@ -1,0 +1,20 @@
+SET IDENTITY_INSERT "user" ON
+INSERT INTO "user" (id, name) VALUES (1,'Alan');
+INSERT INTO "user" (id, name) VALUES (2,'Max');
+INSERT INTO "user" (id, name) VALUES (3,'CY');
+SET IDENTITY_INSERT "user" OFF
+
+UPDATE question SET user_id = 1 WHERE id in (1, 2);
+UPDATE question SET user_id = 2 WHERE id in (3, 4);
+UPDATE question SET user_id = 3 WHERE id in (5);
+
+UPDATE answer SET user_id = 1 WHERE question_id in (1, 2);
+UPDATE answer SET user_id = 2 WHERE question_id in (3, 4);
+UPDATE answer SET user_id = 3 WHERE question_id in (5);
+
+DELETE FROM answer WHERE user_id = 3;
+DELETE FROM question WHERE user_id = 3;
+DELETE FROM "user" WHERE id = 3;
+
+ALTER TABLE answer ALTER COLUMN user_id INT NOT NULL;
+ALTER TABLE question ALTER COLUMN user_id INT NOT NULL;
